@@ -1,0 +1,5 @@
+# adventofts-2024
+
+https://www.adventofts.com/events/2024
+
+To run a particular day: `bun run solutions/day-[1-25].ts`.
