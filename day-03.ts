@@ -98,14 +98,14 @@ export const reportForSanta = {
   2023: survivalRatio(2023),
 };
 
-// @ts-expect-error
+// @ts-expect-error test-error-case
 survivalRatio("1");
 
-// @ts-expect-error
+// @ts-expect-error test-error-case
 survivalRatio(true);
 
-// @ts-expect-error
+// @ts-expect-error test-error-case
 survivalRatio([1]);
 
-// @ts-expect-error
+// @ts-expect-error test-error-case
 survivalRatio({ 1: 1 });

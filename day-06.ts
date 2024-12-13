@@ -24,11 +24,11 @@ type t2_actual = typeof three;
 type t2_expected = "3";
 type t2 = Expect<Equal<t2_actual, t2_expected>>;
 
-// @ts-expect-error
+// @ts-expect-error test-error-case
 createRoute("🌟Vixen", true);
 
-// @ts-expect-error
+// @ts-expect-error test-error-case
 createRoute("💃Dancer", [1]);
 
-// @ts-expect-error
+// @ts-expect-error test-error-case
 createRoute("☄️Comet", { 1: 1 });

@@ -1,13 +1,13 @@
 enum Gift {
-  Coal                         = 0,
-  Train                        = 1 << 0,
-  Bicycle                      = 1 << 1,
+  Coal = 0,
+  Train = 1 << 0,
+  Bicycle = 1 << 1,
   SuccessorToTheNintendoSwitch = 1 << 2,
-  TikTokPremium                = 1 << 3,
-  Vape                         = 1 << 4,
-  Traditional                  = Train | Bicycle,
-  OnTheMove                    = Coal | Bicycle | TikTokPremium | Vape,
-  OnTheCouch                   = Coal | SuccessorToTheNintendoSwitch | TikTokPremium | Vape,
+  TikTokPremium = 1 << 3,
+  Vape = 1 << 4,
+  Traditional = Train | Bicycle,
+  OnTheMove = Coal | Bicycle | TikTokPremium | Vape,
+  OnTheCouch = Coal | SuccessorToTheNintendoSwitch | TikTokPremium | Vape,
 }
 
 const test = <F extends Gift>(flag: F) => flag;
@@ -22,21 +22,21 @@ test<Gift.Vape>(16);
 test<Gift.OnTheMove>(26);
 test<Gift.OnTheCouch>(28);
 
-// @ts-expect-error
+// @ts-expect-error test-error-case
 test<Gift.Coal>(10);
-// @ts-expect-error
+// @ts-expect-error test-error-case
 test<Gift.Train>(11);
-// @ts-expect-error
+// @ts-expect-error test-error-case
 test<Gift.Bicycle>(12);
-// @ts-expect-error
+// @ts-expect-error test-error-case
 test<Gift.SuccessorToTheNintendoSwitch>(14);
-// @ts-expect-error
+// @ts-expect-error test-error-case
 test<Gift.TikTokPremium>(18);
-// @ts-expect-error
+// @ts-expect-error test-error-case
 test<Gift.Vape>(116);
-// @ts-expect-error
+// @ts-expect-error test-error-case
 test<Gift.Traditional>(13);
-// @ts-expect-error
+// @ts-expect-error test-error-case
 test<Gift.OnTheMove>(126);
-// @ts-expect-error
+// @ts-expect-error test-error-case
 test<Gift.OnTheCouch>(124);

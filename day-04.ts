@@ -839,11 +839,11 @@ type t3_actual = typeof q2_2024;
 type t3_expected = number;
 type t3 = Expect<Equal<t3_actual, t3_expected>>;
 
-// @ts-expect-error
+// @ts-expect-error test-error-case
 survivalRatio(true);
 
-// @ts-expect-error
+// @ts-expect-error test-error-case
 survivalRatio([1]);
 
-// @ts-expect-error
+// @ts-expect-error test-error-case
 survivalRatio({ 1: 1 });
