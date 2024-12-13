@@ -3,5 +3,9 @@
 https://www.adventofts.com/events/2024
 
 ```
-$ deno check day-[01-25].ts
+$ deno check solutions/day-[01-25].ts
+
+# or
+
+$ deno task check-all
 ```

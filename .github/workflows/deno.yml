@@ -1,10 +1,5 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# This workflow will install Deno then run `deno lint` and `deno test`.
-# For more information see: https://github.com/denoland/setup-deno
+# For more information see:
+# https://github.com/denoland/setup-deno
 
 name: Deno
 
@@ -29,11 +24,11 @@ jobs:
         with:
           deno-version: v2.x
 
-      - name: Verify formatting
-        run: deno fmt --check
-
-      - name: Run linter
-        run: deno lint
-
       - name: Run type checks
-        run: deno check .
+        run: deno task check-types
+
+      - name: Run code-style checks
+        run: deno task check-lint
+
+      - name: Run fmt checks
+        run: deno task check-fmt
