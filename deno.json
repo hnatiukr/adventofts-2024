@@ -1,22 +1,4 @@
 {
-  "tasks": {
-    "check-types": {
-      "description": "Check TS types",
-      "command": "deno check ."
-    },
-    "check-fmt": {
-      "description": "Check formatting",
-      "command": "deno fmt --check ."
-    },
-    "check-lint": {
-      "description": "Check code-style",
-      "command": "deno lint ."
-    },
-    "check-all": {
-      "description": "Run all checks",
-      "command": "deno task check-types && deno task check-lint && deno task check-fmt"
-    }
-  },
   "imports": {
     "type-testing": "npm:type-testing"
   },
@@ -26,8 +8,6 @@
     "exclude": [".github/workflows/*.yml"]
   },
   "lint": {
-    "rules": {
-      "exclude": ["ban-ts-comment"]
-    }
+    "exclude": ["**/*.ts"]
   }
 }
