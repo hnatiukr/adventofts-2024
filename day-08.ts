@@ -1,6 +1,6 @@
-import type { Expect, Equal } from "type-testing";
+import type { Equal, Expect } from "npm:type-testing";
 
-declare var process: {
+declare const process: {
   env: {
     MOOD_LIGHTS: "true";
     BATH_TEMPERATURE: "327.59";

@@ -1,7 +1,9 @@
-import type { Expect, Equal } from "type-testing";
+import type { Equal, Expect } from "npm:type-testing";
 
 type Digit = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+
 type Quarter = `Q${Extract<Digit, 1 | 2 | 3 | 4>}`;
+
 type YearFrom1000To2999 = `${Extract<Digit, 1 | 2>}${Digit}${Digit}${Digit}`;
 
 type Input = number | `${YearFrom1000To2999} ${Quarter}`;
@@ -17,10 +19,7 @@ const survivalRatio = (input: Input) => {
 
 type QuarterlyData = {
   [key: string]: {
-    /** inflation corrected housing price index */
     housingIndex: number;
-
-    /** inflation corrected North Pole minimum wage */
     minimumWage: number;
   };
 };
@@ -820,31 +819,25 @@ const quarterlyData: QuarterlyData = {
   },
 };
 
-// We can pass numbers like `2009`:
-
 const start = survivalRatio(2009);
-type t0_actual = typeof start; // =>
-type t0_expected = number; // =>
+type t0_actual = typeof start;
+type t0_expected = number;
 type t0 = Expect<Equal<t0_actual, t0_expected>>;
 
 const now = survivalRatio(2024);
-type t1_actual = typeof now; // =>
-type t1_expected = number; // =>
+type t1_actual = typeof now;
+type t1_expected = number;
 type t1 = Expect<Equal<t1_actual, t1_expected>>;
 
-// We can pass strings like `'2009 Q2'`:
-
 const q1_2009 = survivalRatio("2009 Q1");
-type t2_actual = typeof q1_2009; // =>
-type t2_expected = number; // =>
+type t2_actual = typeof q1_2009;
+type t2_expected = number;
 type t2 = Expect<Equal<t2_actual, t2_expected>>;
 
 const q2_2024 = survivalRatio("2024 Q2");
-type t3_actual = typeof q2_2024; // =>
-type t3_expected = number; // =>
+type t3_actual = typeof q2_2024;
+type t3_expected = number;
 type t3 = Expect<Equal<t3_actual, t3_expected>>;
-
-// Other data types are not allowed by TypeScript:
 
 // @ts-expect-error
 survivalRatio(true);

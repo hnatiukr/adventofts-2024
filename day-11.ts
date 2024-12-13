@@ -1,14 +1,16 @@
-import type { Expect, Equal } from 'type-testing';
+import type { Equal, Expect } from "npm:type-testing";
 
-type Excuse<T, K extends keyof T & string = keyof T & string> = new (obj: T) => `${K}: ${T[K] & string}`;
+type Excuse<T, K extends keyof T & string = keyof T & string> = new (
+  obj: T,
+) => `${K}: ${T[K] & string}`;
 
 const existingExcuses = {
-  karaoke:   ['Kendrick Lamar, Opeth'],
-  margarita: 'Peppermint-Jalapeño Mojito',
+  karaoke: ["Kendrick Lamar, Opeth"],
+  margarita: "Peppermint-Jalapeño Mojito",
 };
 
 const helpingTheReindeer = {
-  helping: 'the reindeer',
+  helping: "the reindeer",
 } as const;
 
 declare const Excuse0: Excuse<typeof helpingTheReindeer>;
@@ -23,7 +25,7 @@ type t0_expected = "helping: the reindeer";
 type t0 = Expect<Equal<t0_actual, t0_expected>>;
 
 const eatingFudge = {
-  eating: 'fudge',
+  eating: "fudge",
 } as const;
 
 declare const Excuse1: Excuse<typeof eatingFudge>;

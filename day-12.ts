@@ -1,28 +1,29 @@
-import type { Expect, Equal } from "type-testing";
+import type { Equal, Expect } from "npm:type-testing";
 
 type IsEven<N extends number> = `${N}` extends `${number}${infer Rest}`
-  ? Rest extends ""
-    ? `${N}` extends "0" | "2" | "4" | "6" | "8"
-      ? true
-      : false
-    : IsEven<StringLength<Rest>>
+  ? Rest extends "" ? `${N}` extends "0" | "2" | "4" | "6" | "8" ? true
+    : false
+  : IsEven<StringLength<Rest>>
   : false;
 
 type StringLength<
   Str extends string,
   Acc extends unknown[] = [],
-> = Str extends `${infer First}${infer Rest}` ? StringLength<Rest, [...Acc, First]> : Acc["length"];
+> = Str extends `${infer First}${infer Rest}`
+  ? StringLength<Rest, [...Acc, First]>
+  : Acc["length"];
 
-type NaughtyOrNice<Name extends string> =
-  IsEven<StringLength<Name>> extends true ? "naughty" : "nice";
+type NaughtyOrNice<Name extends string> = IsEven<StringLength<Name>> extends
+  true ? "naughty" : "nice";
 
 type FormatNames<T extends [string, string, string][]> = {
   [K in keyof T]: T[K] extends [infer Name extends string, string, infer Count]
     ? {
-        name: Name;
-        count: Count extends `${infer CountNum extends number}` ? CountNum : never;
-        rating: NaughtyOrNice<Name>;
-      }
+      name: Name;
+      count: Count extends `${infer CountNum extends number}` ? CountNum
+        : never;
+      rating: NaughtyOrNice<Name>;
+    }
     : never;
 };
 
