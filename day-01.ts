@@ -1,4 +1,4 @@
-import type { Equal, Expect } from "npm:type-testing";
+import type { Equal, Expect } from 'type-testing';
 
 type Demand = number;
 

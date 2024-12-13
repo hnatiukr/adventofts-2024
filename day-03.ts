@@ -1,7 +1,7 @@
 const survivalRatio = (input: number) => {
   const data = annualData[input];
   if (!data) {
-    throw new Error("Data not found");
+    throw new Error('Data not found');
   }
   return data.housingIndex / data.minimumWage;
 };
@@ -98,14 +98,14 @@ export const reportForSanta = {
   2023: survivalRatio(2023),
 };
 
-// @ts-expect-error test-error-case
-survivalRatio("1");
+// @ts-expect-error
+survivalRatio('1');
 
-// @ts-expect-error test-error-case
+// @ts-expect-error
 survivalRatio(true);
 
-// @ts-expect-error test-error-case
+// @ts-expect-error
 survivalRatio([1]);
 
-// @ts-expect-error test-error-case
+// @ts-expect-error
 survivalRatio({ 1: 1 });

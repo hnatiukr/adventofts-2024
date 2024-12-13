@@ -1,4 +1,4 @@
-import type { Equal, Expect } from "npm:type-testing";
+import type { Equal, Expect } from 'type-testing';
 
 const createRoute = <Route extends readonly string[] & { length: number }>(
   author: string,
@@ -9,14 +9,13 @@ const createRoute = <Route extends readonly string[] & { length: number }>(
   createdAt: Date.now(),
 });
 
-const oneMill =
-  createRoute("💨Dasher", ["Atherton", "Scarsdale", "Cherry Hills Village"])
-    .route;
+const oneMill = createRoute('💨Dasher', ['Atherton', 'Scarsdale', 'Cherry Hills Village'])
+  .route;
 type t0_actual = typeof oneMill;
-type t0_expected = ["Atherton", "Scarsdale", "Cherry Hills Village"];
+type t0_expected = ['Atherton', 'Scarsdale', 'Cherry Hills Village'];
 type t0 = Expect<Equal<t0_actual, t0_expected>>;
 
-const two = createRoute("🌟Vixen", ["Detroit", "Cleveland", "Dayton"]).route;
+const two = createRoute('🌟Vixen', ['Detroit', 'Cleveland', 'Dayton']).route;
 type t1_actual = typeof two;
-type t1_expected = ["Detroit", "Cleveland", "Dayton"];
+type t1_expected = ['Detroit', 'Cleveland', 'Dayton'];
 type t1 = Expect<Equal<t1_actual, t1_expected>>;

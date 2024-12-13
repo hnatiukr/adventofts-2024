@@ -22,21 +22,21 @@ test<Gift.Vape>(16);
 test<Gift.OnTheMove>(26);
 test<Gift.OnTheCouch>(28);
 
-// @ts-expect-error test-error-case
+// @ts-expect-error
 test<Gift.Coal>(10);
-// @ts-expect-error test-error-case
+// @ts-expect-error
 test<Gift.Train>(11);
-// @ts-expect-error test-error-case
+// @ts-expect-error
 test<Gift.Bicycle>(12);
-// @ts-expect-error test-error-case
+// @ts-expect-error
 test<Gift.SuccessorToTheNintendoSwitch>(14);
-// @ts-expect-error test-error-case
+// @ts-expect-error
 test<Gift.TikTokPremium>(18);
-// @ts-expect-error test-error-case
+// @ts-expect-error
 test<Gift.Vape>(116);
-// @ts-expect-error test-error-case
+// @ts-expect-error
 test<Gift.Traditional>(13);
-// @ts-expect-error test-error-case
+// @ts-expect-error
 test<Gift.OnTheMove>(126);
-// @ts-expect-error test-error-case
+// @ts-expect-error
 test<Gift.OnTheCouch>(124);

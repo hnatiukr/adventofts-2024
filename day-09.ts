@@ -1,8 +1,8 @@
-import type { Equal, Expect } from "npm:type-testing";
+import type { Equal, Expect } from 'type-testing';
 // import type { Child, List, Status } from "santas-special-list";
 
 // declare module "santas-special-list" {
-type Status = "naughty" | "nice";
+type Status = 'naughty' | 'nice';
 
 type Child = {
   name: string;
@@ -13,7 +13,7 @@ type List = Child[];
 // }
 
 type t0_actual = Status;
-type t0_expected = "naughty" | "nice";
+type t0_expected = 'naughty' | 'nice';
 type t0 = Expect<Equal<t0_actual, t0_expected>>;
 
 type t1_actual = Child;
